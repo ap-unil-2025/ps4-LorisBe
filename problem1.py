@@ -46,68 +46,29 @@ def merge_lists(list1, list2):
 
     return merged_list
 
-    """
-    Merge two lists, alternating elements from each.
-    If one list is longer, append remaining elements.
-
-    Args:
-        list1 (list): First list
-        list2 (list): Second list
-
-    Returns:
-        list: Merged list with alternating elements
-
-    Example:
-        >>> merge_lists([1, 3, 5], [2, 4, 6])
-        [1, 2, 3, 4, 5, 6]
-        >>> merge_lists([1, 2], [10, 20, 30, 40])
-        [1, 10, 2, 20, 30, 40]
-    """
-    # TODO: Implement this function
-    # Hint: Use a loop with index, handle different lengths
-    pass
-
-
 def list_statistics(numbers):
-    """
-    Calculate statistics for a list of numbers.
 
-    Args:
-        numbers (list): List of numbers
-
-    Returns:
-        dict: Dictionary with keys 'sum', 'average', 'count', 'max', 'min'
-
-    Example:
-        >>> list_statistics([1, 2, 3, 4, 5])
-        {'sum': 15, 'average': 3.0, 'count': 5, 'max': 5, 'min': 1}
-    """
     if not numbers:
         return None
 
-    # TODO: Implement this function
-    # Calculate and return a dictionary with the statistics
-    pass
+    
+    count = len(numbers)
+    total = sum(numbers)
+    average = total / count
+    max_nbr = max(numbers)
+    min_nbr = min(numbers)
+    
+    result = {"sum": total, "average": average, "count": count, "max": max_nbr, "min": min_nbr}
+    return result
 
 
 def chunk_list(items, chunk_size):
-    """
-    Split a list into chunks of specified size.
+    list_chunked = []
+    for i in range(0, len(items),chunk_size):
+        list_chunked.append(items[i : i + chunk_size])
+    
+    return list_chunked
 
-    Args:
-        items (list): List to split
-        chunk_size (int): Size of each chunk
-
-    Returns:
-        list: List of lists (chunks)
-
-    Example:
-        >>> chunk_list([1, 2, 3, 4, 5, 6, 7], 3)
-        [[1, 2, 3], [4, 5, 6], [7]]
-    """
-    # TODO: Implement this function
-    # Hint: Use list slicing in a loop
-    pass
 
 
 # Test cases
