@@ -4,104 +4,48 @@ Practice working with Python lists - creating, modifying, filtering, and transfo
 """
 
 
-def create_number_list(start, end):
-    """
-    Create a list of numbers from start to end (inclusive).
-
-    Args:
-        start (int): Starting number
-        end (int): Ending number
-
-    Returns:
-        list: List of numbers from start to end
-
-    Example:
-        >>> create_number_list(1, 5)
-        [1, 2, 3, 4, 5]
-    """
-    # TODO: Implement this function
-    # Hint: Use range() and convert to list
-    pass
-
+def create_number_list(start = int, end = int):
+    my_list = list(range(start, end+1))
+    return my_list
+    
 
 def filter_even_numbers(numbers):
-    """
-    Return a new list containing only the even numbers.
-
-    Args:
-        numbers (list): List of integers
-
-    Returns:
-        list: List of even numbers only
-
-    Example:
-        >>> filter_even_numbers([1, 2, 3, 4, 5, 6])
-        [2, 4, 6]
-    """
-    # TODO: Implement this function
-    # You can use a loop or list comprehension
-    pass
+    even_list = []
+    for i in numbers:
+        if i % 2 == 0:
+            even_list.append(i)
+    return even_list
 
 
 def square_numbers(numbers):
-    """
-    Return a new list with each number squared.
-
-    Args:
-        numbers (list): List of numbers
-
-    Returns:
-        list: List where each element is squared
-
-    Example:
-        >>> square_numbers([1, 2, 3, 4])
-        [1, 4, 9, 16]
-    """
-    # TODO: Implement this function
-    # Hint: Try a list comprehension!
-    pass
+    return[n**2 for n in numbers]
 
 
 def find_max_min(numbers):
-    """
-    Find the maximum and minimum values in a list.
-
-    Args:
-        numbers (list): List of numbers
-
-    Returns:
-        tuple: (max_value, min_value)
-
-    Example:
-        >>> find_max_min([3, 1, 4, 1, 5, 9, 2, 6])
-        (9, 1)
-    """
-    # TODO: Implement this function
-    # You can use max() and min() built-in functions
-    pass
-
+    max_nbr = max(numbers)
+    min_nbr = min(numbers)
+    max_and_min = (max_nbr, min_nbr)
+    return max_and_min
 
 def remove_duplicates(items):
-    """
-    Remove duplicate items from a list while preserving order.
-
-    Args:
-        items (list): List that may contain duplicates
-
-    Returns:
-        list: List with duplicates removed
-
-    Example:
-        >>> remove_duplicates([1, 2, 2, 3, 4, 3, 5])
-        [1, 2, 3, 4, 5]
-    """
-    # TODO: Implement this function
-    # Hint: You can use a loop and check if item is already in result list
-    # Or convert to set and back to list (but this doesn't preserve order)
-    pass
+    result_list = []
+    for i in items:
+        if i not in result_list:
+            result_list.append(i)
+    return result_list
 
 
 def merge_lists(list1, list2):
+    merged_list = []
+    max_length = max(len(list1), len(list2))
+    for i in range(max_length):
+        if i < len(list1):
+            merged_list.append(list1[i])
+        if i < len(list2):
+            merged_list.append(list2[i])
+
+    return merged_list
+
     """
     Merge two lists, alternating elements from each.
     If one list is longer, append remaining elements.
