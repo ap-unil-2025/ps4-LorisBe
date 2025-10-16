@@ -14,7 +14,7 @@ This assignment focuses on working with Python data structures (lists and dictio
 - Use Python modules (json, random, etc.)
 - Understand basic recursion concepts
 
-## Files in This Repository
+## Files in This Repository 
 - `problem1.py` - List operations and comprehensions
 - `problem2.py` - Dictionary operations and nested structures
 - `problem3.py` - Contact manager with functions
